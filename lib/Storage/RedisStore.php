@@ -18,7 +18,7 @@ class RedisStore implements Store
      *
      * @return string
      */
-    function __construct($server = '127.0.0.1', $port = 6379)
+    function __construct($server = '127.0.0.1', $port = 6379, $expire = 0)
     {
         $this->redis = new \Redis();
 
@@ -27,6 +27,9 @@ class RedisStore implements Store
         }
         if($port) {
             $this->port = $port;
+        }
+        if($expire) {
+            $this->expire = $expire;
         }
         $this->redis->connect($this->server, $this->port);
 

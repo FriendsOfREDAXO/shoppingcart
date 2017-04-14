@@ -18,7 +18,7 @@ class MemcacheStore implements Store
      *
      * @return string
      */
-    function __construct($server = 'localhost', $port = 11211)
+    function __construct($server = 'localhost', $port = 11211, $expire = 0)
     {
         $this->mc = new \Memcache();
 
@@ -27,6 +27,9 @@ class MemcacheStore implements Store
         }
         if($port) {
             $this->port = $port;
+        }
+        if($expire) {
+            $this->expire = $expire;
         }
         $this->mc->addServer($this->server, $this->port);
 
