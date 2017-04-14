@@ -81,7 +81,7 @@ $cart->remove('e4df90d236966195b49b0f01f5ce360a356bc76b');
 
 #### Artikel im Warenkorb aktualisieren
 
-Um eine Eignschaft eines Artikels im Warenkorb zu ändern, musst du die `update` Methode nutzen. Du musst die Warenkorb-Artikel-Id, den Namen der Eigenschaft (der "key", z.B. price) und den neuen Wert übermitteln. Die Methode wird dir die neue Warenkorb-Artikel-ID als Rückgabe übermitteln (falls es sich durch das Update verändert hat)
+Um eine Eigenschaft eines Artikels im Warenkorb zu ändern, musst die `update` Methode genutzt werden. Du musst die Warenkorb-Artikel-Id, den Namen der Eigenschaft (der "Key", z.B. `price`) und den neuen Wert übermitteln. Die Methode wird dir die neue Warenkorb-Artikel-ID als Rückgabe übermitteln (falls es sich durch das Update verändert hat)
 
 ```php
 $newId = $cart->update('e4df90d236966195b49b0f01f5ce360a356bc76b', 'price', 959.99);
@@ -103,7 +103,7 @@ if ($item) {
 
 ####  Alle Artikel aus dem Warenkorb holen
 
-Hole alle Artikel aus dem Warenkorb mit der `all` Methode. Es wird ein `array` aller Artikel aus dem Warenkorb zurückgegeben
+Hole alle Artikel aus dem Warenkorb mit der `all` Methode. Es wird ein `array` aller Artikel aus dem Warenkorb zurückgegeben.
 
 ```php
 $cartItems = $cart->all();
@@ -115,7 +115,7 @@ if (count($cartItems) > 0) {
 }
 ```
 
-#### Prüfen ob ein Artikel im Warenkorb existiert
+#### Prüfen, ob ein Artikel im Warenkorb existiert
 
 Prüft ob ein Artikel im Warenkorb existiert. Nutze dazu die `has` Methode. Liefert `true` or `false` zurück.
 
@@ -142,14 +142,13 @@ Du kannst den aktuellen Warenkorb mit der `save` Methode speichern.
 $cart->save();
 ```
 
-Die Methode wird die aktuellen Warenkorb-Artikel und Warenkorb-ID in den Store speichern.
-
+Die Methode wird die aktuellen Warenkorb-Artikel und Warenkorb-ID in den Store speichern. 
 Du kannst den Warenkorb wiederherstellen, indem du die `restore` Methode verwendest.
 
 ```php
 $cart->restore();
 ```
-Diese Methode wird alle zwischengespeicherten Artikel wieder zum Warenkorb hinzufügen und die Warenkorb-Id setzen. Wenn es ein Problem geben sollte, wird ein `Cart\CartRestoreException geworfen. Dies passiert nur, wenn:
+Diese Methode wird alle zwischengespeicherten Artikel wieder zum Warenkorb hinzufügen und die Warenkorb-Id setzen. Falls es ein Problem geben sollte, wird ein `Cart\CartRestoreException` geworfen. Dies passiert nur, wenn:
 
 - Die gespeicherten Daten nicht serialisiert werden können
 - Die nicht-serialisierten Daten ungülig sind (kein array)
