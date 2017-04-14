@@ -52,7 +52,7 @@ Unter [Warenkorb Storage Implementation](#cart-store) wird noch mal genauer erkl
 
 #### Einen Artikel zum Warenkorb hinzufügen
 
-Benutzen die `add` Methode um einen Artikel zum Warenkorb hinzuzufügen. Ein gültiges `Cart\CartItem` muss der Methode übergeben werden.
+Benutze die `add` Methode um einen Artikel zum Warenkorb hinzuzufügen. Ein gültiges `Cart\CartItem` muss der Methode übergeben werden. Der Namespace wird bereits automatisch von ShoppingCartItem gesetzt, nur interessant, falls du den Wrapper nicht nutzen möchtest. (siehe vendor-lib)
 
 ```php
 $item = new ShoppingCartItem;
