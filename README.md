@@ -239,9 +239,12 @@ $item->options = [
     'ram' => '8 GB',
     'ssd' => '256 GB'
 ];
+
+// hier wird erst hinzugefügt, bitte $cart Objekt nutzen.
+$cart->add($item);
 ```
 
-`Cart\CartItem` implements `ArrayAccess` so dass Eigenschaften des Artikels auch wie ein Array behandelt werden können:
+`Cart\CartItem` implementiert `ArrayAccess` so dass die Eigenschaften des Artikels auch wie ein Array behandelt werden können:
 
 ```php
 $item = new ShoppingCartItem;
@@ -255,6 +258,9 @@ $item['options'] = [
     'ram' => '8 GB',
     'ssd' => '256 GB'
 ];
+
+// hier wird erst hinzugefügt, bitte $cart Objekt nutzen.
+$cart->add($item);
 ```
 
 Die Daten können auch direkt als Array an den Warenkorb-Artikel Konstruktor übergeben werden:
@@ -273,6 +279,9 @@ $itemData = [
 ];
 
 $item = new ShoppingCartItem($itemData);
+
+// hier wird erst hinzugefügt, bitte $cart Objekt nutzen.
+$cart->add($item);
 ```
 
 * Wird keine Menge (`quantity`) an den Konstruktor übergeben, wird `quantity` per default auf `1` gesetzt. Die Menge kann also auch gleich beeinflusst werden.
