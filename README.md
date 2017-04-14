@@ -81,7 +81,7 @@ $cart->remove('e4df90d236966195b49b0f01f5ce360a356bc76b');
 
 #### Artikel im Warenkorb aktualisieren
 
-Um eine Eigenschaft eines Artikels im Warenkorb zu ändern, musst die `update` Methode genutzt werden. Du musst die Warenkorb-Artikel-Id, den Namen der Eigenschaft (der "Key", z.B. `price`) und den neuen Wert übermitteln. Die Methode wird dir die neue Warenkorb-Artikel-ID als Rückgabe übermitteln (falls es sich durch das Update verändert hat)
+Um eine Eigenschaft eines Artikels im Warenkorb zu ändern, muss die `update` Methode genutzt werden. Du musst die Warenkorb-Artikel-Id, den Namen der Eigenschaft (der "Key", z.B. `price`) und den neuen Wert übermitteln. Die Methode wird dir die neue Warenkorb-Artikel-ID als Rückgabe übermitteln (falls es sich durch das Update verändert hat)
 
 ```php
 $newId = $cart->update('e4df90d236966195b49b0f01f5ce360a356bc76b', 'price', 959.99);
