@@ -39,6 +39,13 @@ $cart = ShoppingCart::factory($id, $cartSessionStore);
 Die Storage Implementation muss `Cart\Storage\Store` implementieren.
 Die Id wird zum Speichern / Wiederherstellen der Warenkorb-Storage Implementation genutzt.
 
+Aktuell gibt es
+* SessionStore
+* CookieStore
+* MemcachedStore
+* MemcacheStore
+* RedisStore
+
 #### Einen Artikel zum Warenkorb hinzufügen
 
 Benutzen die `add` Methode um einen Artikel zum Warenkorb hinzuzufügen. Ein gültiges `Cart\CartItem` muss der Methode übergeben werden.
@@ -431,7 +438,7 @@ Array wird folgendermaßen strukturiert sein:
 
 Ein Warenkorb Storage muss `Cart\Storage\Store` implementieren.
 
-Das AddOn liefern zwei Basis Sicherungs-Implementations: `Cart\Storage\SessionStore` and `Cart\Storage\CookieStore`.
+Das AddOn liefern einige Basis Sicherungs-Implementations: `Cart\Storage\SessionStore`, `Cart\Storage\CookieStore`, `Cart\Storage\MemcachedStore`, `Cart\Storage\MemcacheStore`, `Cart\Storage\RedisStore`.
 
 Wenn die `save` Methode des Warenkorbs aufgerufen wird, übermittelt das AddOn die Warenkorb-ID und die serialisierten Daten an die `put` Methode der Storage Implementation.
 
