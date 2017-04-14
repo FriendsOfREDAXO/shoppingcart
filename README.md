@@ -29,11 +29,13 @@ Um eine neue Warenkorb-Instanz zu erstellen, musst du eine ID und eine Storage I
 Wie man eigene Storage Implementationen zur Verfügung stellt, erfährst du am Ende der README.
 
 ```php
+/*
+    die beiden Parameter sind optional, per Default wird die SessionID und die SessionStore Implementation genutzt.
+    möchtest du mehrere Warenkörbe pro User gleichzeitig zur Verfügung stellen, solltest du immer eine eigene ID übergeben.
+    public static function factory($cartId = null, $storageImplementation = 'Cart\Storage\SessionStore')
+    Möchtest du den CookieStore nutzen, bitte "Cart\Storage\CookieStore" nutzen. Der CookieStore überlebt auch neue Sessions.
+*/
 $cart = ShoppingCart::factory($id, $cartSessionStore);
-// die beiden Parameter sind optional, per Default wird die SessionID und die SessionStore Implementation genutzt.
-// möchtest du mehrere Warenkörbe pro User gleichzeitig zur Verfügung stellen, solltest du immer eine eigene ID übergeben.
-// public static function factory($cartId = null, $storageImplementation = 'Cart\Storage\SessionStore')
-// Möchtest du den CookieStore nutzen, bitte "Cart\Storage\CookieStore" nutzen. Der CookieStore überlebt auch neue Sessions.
 ```
 
 Die Storage Implementation muss `Cart\Storage\Store` implementieren.
