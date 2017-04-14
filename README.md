@@ -46,6 +46,8 @@ Aktuell gibt es
 * MemcacheStore
 * RedisStore
 
+Unter [Warenkorb Storage Implementation](#cart-store) wird noch mal genauer erklärt, wie Memcache(d) und Redis konfiguriert werden können.
+
 #### Einen Artikel zum Warenkorb hinzufügen
 
 Benutzen die `add` Methode um einen Artikel zum Warenkorb hinzuzufügen. Ein gültiges `Cart\CartItem` muss der Methode übergeben werden.
@@ -439,6 +441,14 @@ Array wird folgendermaßen strukturiert sein:
 Ein Warenkorb Storage muss `Cart\Storage\Store` implementieren.
 
 Das AddOn liefern einige Basis Sicherungs-Implementations: `Cart\Storage\SessionStore`, `Cart\Storage\CookieStore`, `Cart\Storage\MemcachedStore`, `Cart\Storage\MemcacheStore`, `Cart\Storage\RedisStore`.
+
+Memcache(d) und Redis laufen Out-of-the-box, wenn die Einstellungen per Default eingestellt sind. Authentifizierung wird nicht unterstützt. Sollte das gewünscht sein, kannst du die Classes unter eigenem Namen duplizieren (zu finden unter lib/Storage). Es kann der Port und der Server eingestellt werden.
+
+```php
+    $cart = ShoppingCart::factory($id = null, (new Cart\Storage\MemcachedStore($server, $port, $expireInMillisekunden)))
+    $cart = ShoppingCart::factory($id = null, (new Cart\Storage\MemcacheStore($server, $port, $expireInMillisekunden)))
+    $cart = ShoppingCart::factory($id = null, (new Cart\Storage\RedisStor($server, $port, $expireInSekunden)))
+```
 
 Wenn die `save` Methode des Warenkorbs aufgerufen wird, übermittelt das AddOn die Warenkorb-ID und die serialisierten Daten an die `put` Methode der Storage Implementation.
 
