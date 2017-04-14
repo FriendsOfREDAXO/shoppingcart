@@ -15,7 +15,7 @@ Ein flexibles, modernes Warenkorb-Framework (ohne Bezahlprozess)
 
 Oder den REDAXO-Installer / ZIP-Upload AddOn nutzen!
 
-## Wie benutzen
+## Navigation
 
 - [Warenkorb](#cart)
 - [Artikel](#cart-item)
