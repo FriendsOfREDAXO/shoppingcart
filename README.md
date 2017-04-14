@@ -463,6 +463,45 @@ class SessionStore implements Store
 }
 ```
 
+# Beispiel Modulausgabe
+
+```php
+<?php
+$cart = ShoppingCart::factory();
+
+$itemData = [
+    'name' => 'Macbook Pro',
+    'sku' => 'MBP8GB',
+    'price' => 1200,
+    'tax' => 200,
+    'options' => [
+        'ram' => '8 GB',
+        'ssd' => '256 GB'
+    ]
+];
+$item = new ShoppingCartItem($itemData);
+$cart->add($item);
+
+dump($item);
+
+$item = new ShoppingCartItem;
+$item->name = 'Macbook Pro';
+$item->sku = 'MBP8GB';
+$item->price = 1200;
+$item->tax = 200;
+$item->hundesohne = 200;
+$cart->add($item);
+
+$cart->update($item->getId(), 'price', 959.99);
+
+dump($item);
+dump($item->getId());
+dump($cart);
+dump($cart->getStore());
+dump($cart->getId());
+dump($cart->toArray());
+```
+
 # Credits
 - Addon, deutsche Doku und Anpassungen für Redaxo by @Hirbod
 - @mike182uk, für das Herz dieses AddOns https://github.com/mike182uk/cart
