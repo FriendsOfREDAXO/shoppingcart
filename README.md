@@ -37,7 +37,7 @@ $cart = ShoppingCart::factory($id, $cartSessionStore);
 ```
 
 Die Storage Implementation muss `Cart\Storage\Store` implementieren.
-Die Id wird zum Speichern / Wiederherstellen des Warenkorb-Storage Implementation genutzt.
+Die Id wird zum Speichern / Wiederherstellen der Warenkorb-Storage Implementation genutzt.
 
 #### Einen Artikel zum Warenkorb hinzufügen
 
@@ -462,3 +462,6 @@ class SessionStore implements Store
     }
 }
 ```
+
+# Credits
+An @mike182uk, für das Herz dieses AddOns https://github.com/mike182uk/cart
