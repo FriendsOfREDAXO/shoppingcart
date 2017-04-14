@@ -464,4 +464,5 @@ class SessionStore implements Store
 ```
 
 # Credits
-An @mike182uk, für das Herz dieses AddOns https://github.com/mike182uk/cart
+- Addon, deutsche Doku und Anpassungen für Redaxo by @Hirbod
+- @mike182uk, für das Herz dieses AddOns https://github.com/mike182uk/cart
