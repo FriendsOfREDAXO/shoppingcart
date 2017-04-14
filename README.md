@@ -42,11 +42,11 @@ Die Storage Implementation muss `Cart\Storage\Store` implementieren.
 Die Id wird zum Speichern / Wiederherstellen der Warenkorb-Storage Implementation genutzt.
 
 Aktuell gibt es
-* SessionStore
-* CookieStore
-* MemcachedStore
-* MemcacheStore
-* RedisStore
+* Cart\Storage\SessionStore
+* Cart\Storage\CookieStore
+* Cart\Storage\MemcachedStore
+* Cart\Storage\MemcacheStore
+* Cart\Storage\RedisStore
 
 Unter [Warenkorb Storage Implementation](#cart-store) wird noch mal genauer erklärt, wie Memcache(d) und Redis konfiguriert werden können.
 
