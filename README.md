@@ -498,7 +498,7 @@ $item->name = 'Macbook Pro';
 $item->sku = 'MBP8GB';
 $item->price = 1200;
 $item->tax = 200;
-$item->hundesohne = 200;
+$item->meinkey = 'is cool';
 $cart->add($item);
 
 $cart->update($item->getId(), 'price', 959.99);
