@@ -4,7 +4,7 @@ Ein flexibles, modernes Warenkorb-Framework (ohne Bezahlprozess)
 
 ## Voraussetzungen
 
-- REDAXO >= 5.2.0
+- REDAXO >= 5.1.0
 - PHP >= 5.6.0
 
 ## Installation
